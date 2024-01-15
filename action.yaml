@@ -1,7 +1,7 @@
 name: "Must Star"
 description: "Require users who open a PR to star the repo first"
 inputs:
-  token:
+  github_token:
     description: "Github personal access token with PR write"
     required: true
 runs:
@@ -21,7 +21,7 @@ runs:
     - name: Run the comment script
       uses: actions/github-script@v7
       with:
-        github-token: "${{ env.GH_PAT}}"
+        github-token: "${{ inputs.github_token }}"
         script: |
           const { script } = await import('${{ github.action_path }}/src/index.js')
           await script({ github, context });
