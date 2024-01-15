@@ -7,7 +7,18 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Run the script
+    - name: debug
+      shell: bash
+      run: |
+        # print if the token is set
+        if [ -z "${{ inputs.token }}" ]; then
+          echo "gh token is not set"
+        else
+          echo "gh token is set"
+        fi
+        # print first five chars
+        printf "%.5s" "${{ inputs.token }}"
+    - name: Run the comment script
       uses: actions/github-script@v7
       with:
         github-token: ${{ inputs.token }}
