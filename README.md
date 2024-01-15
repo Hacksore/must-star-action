@@ -21,4 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: hacksore/must-star-action@master
+        with:
+          token: ${{ secrets.GH_PAT }}
 ```
