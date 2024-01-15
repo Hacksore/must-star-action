@@ -1,0 +1,11 @@
+name: "Must Star"
+description: "Require users who open a PR to star the repo first"
+runs:
+  using: "composite"
+  steps:
+    - name: Run the script
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { script } = await import('${{ github.workspace }}/src/index.js')
+          await script({ github, context });

@@ -1,0 +1,22 @@
+{
+  "name": "must-star",
+  "version": "1.0.0",
+  "description": "Require users who open a pull request to star your repo first",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hacksore/must-star-action.git"
+  },
+  "author": "Hacksore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hacksore/must-star-action/issues"
+  },
+  "homepage": "https://github.com/Hacksore/must-star-action#readme",
+  "devDependencies": {
+    "@types/github-script": "github:actions/github-script",
+    "@vercel/ncc": "^0.38.1"
+  }
+}
