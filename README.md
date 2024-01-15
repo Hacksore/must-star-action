@@ -1,6 +1,8 @@
-# must-star
+# must-star-action
 
-example of how to use
+This will prevent noobs from raising an issue/pr if they have not starred it, it will instantly close the issue or PR.
+
+### example of how to use
 
 ```yaml
 name: Check Stars on PRs and Issues
