@@ -22,5 +22,5 @@ jobs:
     steps:
       - uses: hacksore/must-star-action@master
         with:
-          github_token: ${{ secrets.GH_PAT }}
+          github-token: ${{ secrets.GH_PAT }}
 ```
