@@ -2,8 +2,7 @@
   "name": "must-star",
   "version": "1.0.0",
   "description": "Require users who open a pull request to star your repo first",
-  "scripts": {
-  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hacksore/must-star-action.git"
