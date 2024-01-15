@@ -10,8 +10,8 @@ name: Check Stars on PRs and Issues
 on:
   pull_request:
     types: [opened]
-  branches:
-    - "*"
+    branches:
+      - "*"
 
   issues:
     types: [opened]
