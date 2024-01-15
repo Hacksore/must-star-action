@@ -2,7 +2,7 @@
 
 example of how to use
 
-```
+```yaml
 name: Check Stars on PRs and Issues
 
 on:
