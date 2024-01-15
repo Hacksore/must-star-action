@@ -9,7 +9,8 @@ export const script = async ({ context, github }) => {
       issue_number: context.issue.number,
       owner: context.repo.owner,
       repo: context.repo.repo,
-      body: "You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it 1️⃣ first.",
+      body: `> ![IMPORTANT]
+> You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it 1️⃣ first.`
     });
   }
 };
