@@ -14,7 +14,6 @@
   },
   "homepage": "https://github.com/Hacksore/must-star-action#readme",
   "devDependencies": {
-    "@types/github-script": "github:actions/github-script",
-    "@vercel/ncc": "^0.38.1"
+    "@types/github-script": "github:actions/github-script"
   }
 }

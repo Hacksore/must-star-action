@@ -16,5 +16,5 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: hacksore/must-star@master
+      - uses: hacksore/must-star-action@master
 ```
