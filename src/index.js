@@ -4,6 +4,7 @@ export const script = async ({ context, github }) => {
     owner: context.repo.owner,
     repo: context.repo.repo,
   });
+
   if (!us.some((star) => star.owner.login === context.payload.sender.login)) {
     github.rest.issues.createComment({
       issue_number: context.issue.number,
@@ -13,4 +14,13 @@ export const script = async ({ context, github }) => {
 > You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it 1️⃣ first.`
     });
   }
+
+  // close issue or pr
+  github.rest.issues.update({
+    issue_number: context.issue.number,
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    state: 'closed',
+  });
+
 };
