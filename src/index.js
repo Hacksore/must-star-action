@@ -7,13 +7,15 @@ export const script = async ({ context, github }) => {
 
   console.log(context.payload);
 
-  if (!us.some((star) => star.owner.login === context.payload.sender.login)) {
+  const foundUser = us.find((star) => star.owner.login === context.payload.sender?.login);
+
+  if (!foundUser) {
     github.rest.issues.createComment({
       issue_number: context.issue.number,
       owner: context.repo.owner,
       repo: context.repo.repo,
       body: `> [!IMPORTANT]
-> You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it 1️⃣ first.`
+> You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it first!`
     });
   }
 
