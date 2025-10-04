@@ -26,3 +26,5 @@ jobs:
         with:
           github-token: ${{ secrets.GH_PAT }}
 ```
+
+can i update the readme pls
