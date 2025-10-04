@@ -5,16 +5,21 @@ export const script = async ({ context, github }) => {
     repo: context.repo.repo,
   });
 
-  if (!us.some((star) => star.owner.login === context.payload.sender.login)) {
+  console.log(context.payload);
+
+  const foundUser = us.find((star) => star.owner.login === context.payload.sender?.login);
+
+  if (!foundUser) {
     github.rest.issues.createComment({
       issue_number: context.issue.number,
       owner: context.repo.owner,
       repo: context.repo.repo,
       body: `> [!IMPORTANT]
-> You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it 1️⃣ first.`
+> You have not 🙅‍♂️ ✨ starred ✨ the 🤩 repository 🤩 yet 😳. Please 🙏 star it first!`
     });
   }
 
+  // NOTE: this requires a token that can write comments to the PR/Issue
   // close issue or pr
   github.rest.issues.update({
     issue_number: context.issue.number,
