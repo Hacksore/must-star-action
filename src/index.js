@@ -15,6 +15,7 @@ export const script = async ({ context, github }) => {
     });
   }
 
+  // NOTE: this requires a token that can write comments to the PR/Issue
   // close issue or pr
   github.rest.issues.update({
     issue_number: context.issue.number,
