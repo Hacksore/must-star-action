@@ -2,7 +2,9 @@
 
 This will prevent noobs from raising an issue/pr if they have not starred it. It will instantly close the issue or PR.
 
-### example of how to use
+### Usage
+
+You will need to create a `GH_PAT` that has write access so that it can comment and close PRs/Issues.
 
 ```yaml
 name: Check Stars on PRs and Issues
@@ -24,7 +26,3 @@ jobs:
         with:
           github-token: ${{ secrets.GH_PAT }}
 ```
-
-just a test bro
-commit 2
-testing again
