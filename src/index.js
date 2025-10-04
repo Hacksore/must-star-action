@@ -5,9 +5,9 @@ export const script = async ({ context, github }) => {
     repo: context.repo.repo,
   });
 
-  console.log(context.payload);
+  console.log(`Checking if ${context.payload.sender?.login} has starred the repo...`);
 
-  const foundUser = us.find((star) => star.owner.login === context.payload.sender?.login);
+  const foundUser = us.find((star) => star.owner?.login === context.payload.sender?.login);
 
   if (!foundUser) {
     github.rest.issues.createComment({
