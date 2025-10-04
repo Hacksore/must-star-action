@@ -5,6 +5,8 @@ export const script = async ({ context, github }) => {
     repo: context.repo.repo,
   });
 
+  console.log(context.payload);
+
   if (!us.some((star) => star.owner.login === context.payload.sender.login)) {
     github.rest.issues.createComment({
       issue_number: context.issue.number,
