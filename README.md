@@ -24,3 +24,5 @@ jobs:
         with:
           github-token: ${{ secrets.GH_PAT }}
 ```
+
+just a test bro
